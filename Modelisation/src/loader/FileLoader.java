@@ -5,10 +5,16 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import publics.Const;
+import entity.Face;
 import entity.Point;
+import entity.Segment;
 
 public class FileLoader {
 	private int nbPoint, nbSeg, nbFace;
+	private double x, y , z;
+	private Point p1, p2;
+	private Segment s1,s2,s3;
+	
 	public FileLoader(){
 		clearLists();
 		String sta;
@@ -17,14 +23,46 @@ public class FileLoader {
 			sta = br.readLine();
 			initNbs(sta);
 			for(int i = 0; i<nbPoint; i++){
-				double x, y , z;
 				currnt = br.readLine();
-				//Ici il faut recup les doubles de currnt !!!!!!!!
+				initPoints(currnt);
 				Const.points.add(new Point(x, y, z));
+			}
+			for(int i = 0; i<nbSeg; i++){
+				currnt = br.readLine();
+				initSegs(currnt);
+				Const.segments.add(new Segment(p1, p2));
+			}
+			for(int i = 0; i<nbFace; i++){
+				currnt = br.readLine();
+				initFace(currnt);
+				Const.faces.add(new Face(s1, s2, s3));
 			}
 		}catch(IOException e){
 			e.printStackTrace();
 		}
+	}
+	
+	
+	//Inits
+	private void initFace(String currnt) {
+		String words[] = currnt.split(" ");
+		s1 = Const.segments.get(Integer.parseInt(words[0])-1);
+		s2 = Const.segments.get(Integer.parseInt(words[1])-1);
+		s3 = Const.segments.get(Integer.parseInt(words[2])-1);
+	}
+
+	private void initSegs(String currnt) {
+		String words[] = currnt.split(" ");
+		p1 = Const.points.get(Integer.parseInt(words[0])-1);
+		p2 = Const.points.get(Integer.parseInt(words[1])-1);
+		
+	}
+
+	private void initPoints(String currnt) {
+		String words[] = currnt.split(" ");
+		x = Double.parseDouble(words[0]);
+		y = Double.parseDouble(words[1]);
+		z = Double.parseDouble(words[2]);
 	}
 
 	private void initNbs(String sta) {
@@ -40,8 +78,4 @@ public class FileLoader {
 		Const.segments.clear();
 		
 	}
-	public static void main(String args[]){
-		FileLoader f = new FileLoader();
-	}
-	
 }

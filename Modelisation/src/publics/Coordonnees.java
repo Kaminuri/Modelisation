@@ -13,5 +13,7 @@ public class Coordonnees {
 		y += c.y;
 		z += c.z;
 	}
-	
+	public String toString(){
+		return "["+x+" , "+y+", "+z+"]";
+	}
 }
