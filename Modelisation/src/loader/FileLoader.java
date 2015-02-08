@@ -19,7 +19,7 @@ public class FileLoader {
 		clearLists();
 		String sta;
 		String currnt;
-		try(BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Mathias\\Documents\\GitHub\\Modelisation\\Modelisation\\src\\models\\cone.gts"))){
+		try(BufferedReader br = new BufferedReader(new FileReader("src/models/cone.gts"))){
 			sta = br.readLine();
 			initNbs(sta);
 			for(int i = 0; i<nbPoint; i++){
