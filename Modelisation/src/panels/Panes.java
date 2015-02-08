@@ -16,8 +16,8 @@ public class Panes extends JPanel{
 	}
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-		for(Face r : f){
-			//g.drawPolygon(r.x, arg1, arg2);
-		}
+		/*for(Face r : f){
+			g.drawPolygon(r.x, arg1, arg2);
+		}*/
 	}
 }
