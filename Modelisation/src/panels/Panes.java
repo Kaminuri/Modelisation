@@ -15,7 +15,10 @@ public class Panes extends JPanel{
 	ArrayList<Segment> s;
 	Point a;
 	Point b;
-	Segment p;
+	Segment s1;
+	Segment s2;
+	Segment s3;
+	Face f;
 	public Panes(){
 		FileLoader fl = new FileLoader();
 		/*a = new Point(5, 10, 0);
@@ -28,12 +31,12 @@ public class Panes extends JPanel{
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		
-		for(Segment t : s){
+		/*for(Segment t : s){
 			a = t.getP1();
 			b =t.getP2();
 			g.drawLine((int)a.getX(),(int)a.getY(), (int)b.getX(), (int)b.getY());
 			System.out.println("Printed");
-		}
+		}*/
 		//g.drawLine((int)a.getX(),(int)a.getY(), (int)b.getX(), (int)b.getY());
 	}
 }
