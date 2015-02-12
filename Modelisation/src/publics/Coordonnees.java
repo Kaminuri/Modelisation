@@ -16,4 +16,15 @@ public class Coordonnees {
 	public String toString(){
 		return "["+x+" , "+y+", "+z+"]";
 	}
+	public double getX() {
+		return x;
+	}
+	public double getY() {
+		return y;
+	}
+	public double getZ() {
+		return z;
+	}
+	
+	
 }
