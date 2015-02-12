@@ -7,12 +7,14 @@ import javax.swing.JPanel;
 
 import publics.Const;
 import entity.Face;
+import entity.Segment;
 
 public class Panes extends JPanel{
-	ArrayList<Face> f;
+	ArrayList<Segment> s;
+	Segment p;
 	public Panes(){
-		f = new ArrayList<>();
-		f = Const.faces;
+		s = Const.segments;
+		p = s.get(0);
 	}
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
