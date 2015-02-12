@@ -3,13 +3,16 @@ package frame;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import panels.Panes;
 
 public class Datframe extends JFrame{
 	
 	public Datframe(){
-		JLabel image = new JLabel( new ImageIcon( "src/pictures/wow.png"));
-		this.getContentPane().add(image );
-		this.setResizable(false);
+		Panes pan = new Panes();
+		this.getContentPane().add(pan );
+		this.setResizable(true);
 		this.pack();
 	    this.setLocationRelativeTo(null);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
