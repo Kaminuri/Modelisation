@@ -7,6 +7,10 @@ public class Point {
 	public Point(double x, double y, double z){
 		c = new Coordonnees(x, y, z);
 	}
+	
+	public void multiply(int m){
+		c = new Coordonnees(c.getX()*m, c.getY()*m, c.getZ()*m);
+	}
 	public double getX(){
 		return c.getX();
 	}
