@@ -7,4 +7,8 @@ public class Face {
 		 this.s2 = s2;
 		 this.s3 = s3;
 	 }
+	 public Point barycenter(){
+	 	float x = 0, y =0, z = 0;
+	 	
+	 }
 }
