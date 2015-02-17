@@ -42,7 +42,6 @@ public class FileLoader {
 		}
 	}
 	
-	
 	//Inits
 	private void initFace(String currnt) {
 		String words[] = currnt.split(" ");
