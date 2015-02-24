@@ -10,7 +10,7 @@ public class Point {
 	public int scalarProduct(Point p){
 		return this.getY()*p.getZ() - p.getY()*this.getZ() 
 		+ this.z*p.getX()- this.x*p.getZ() 
-		+ this.getX()*p.getY() - this.getX()*p.getY();
+		+ this.getX()*p.getY() - this.getY()*p.getX();
 	}
 	public void multiply(int m){
 		c = new Coordonnees(c.getX()*m, c.getY()*m, c.getZ()*m);
