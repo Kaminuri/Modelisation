@@ -10,7 +10,7 @@ public class Datframe extends JFrame{
 	
 	public Datframe(){
 		
-		this.getContentPane().add(pan);
+		//this.getContentPane().add();
 		this.setResizable(true);
 		this.pack();
 		
