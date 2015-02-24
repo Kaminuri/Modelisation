@@ -11,13 +11,14 @@ public class Datframe extends JFrame{
 	
 	public Datframe(){
 		Panes pan = new Panes();
-		this.getContentPane().add(pan );
+		this.getContentPane().add(pan);
 		this.setResizable(true);
 		this.pack();
+		
 	    this.setLocationRelativeTo(null);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setVisible(true);
-
+	    
 	}
 	public static void main(String[] args) {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
