@@ -5,12 +5,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import panels.Panes;
 
 public class Datframe extends JFrame{
 	
 	public Datframe(){
-		Panes pan = new Panes();
+		
 		this.getContentPane().add(pan);
 		this.setResizable(true);
 		this.pack();
