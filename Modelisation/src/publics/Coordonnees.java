@@ -26,5 +26,8 @@ public class Coordonnees {
 		return z;
 	}
 	
+	public boolean equals(Coordonnees c){
+		return x ==c.x && y == c.y && z == c.z;
+	}
 	
 }

@@ -29,4 +29,12 @@ public class Point {
 	public String toString(){
 		return c + "";
 	}
+	
+	public boolean equals(Point p){
+		return c.equals(p.getC());
+	}
+	private Coordonnees getC() {
+		
+		return c;
+	}
 }
