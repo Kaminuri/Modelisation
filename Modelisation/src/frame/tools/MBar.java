@@ -3,6 +3,7 @@ package frame.tools;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -68,12 +69,11 @@ public class MBar extends JMenuBar{
 		menu = new JMenu("Views");
 		menu.setMnemonic(KeyEvent.VK_A);
 		menu.getAccessibleContext().setAccessibleDescription("Views Panels");
-		this.add(menu);
 		
 		//Translation
-		menuItem = new JMenuItem("Translation", KeyEvent.VK_T);
-		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.ALT_MASK));
-		menuItem.getAccessibleContext().setAccessibleDescription("Delete a file from the Data Base");
+		menuItem = new JMenuItem("Translation",new ImageIcon("pictures/translationIcone.jpg") );
+		/*menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.ALT_MASK));
+		menuItem.getAccessibleContext().setAccessibleDescription("Delete a file from the Data Base");*/
 		menu.add(menuItem);
 		
 		//Rotation
@@ -122,6 +122,7 @@ public class MBar extends JMenuBar{
 		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4, ActionEvent.ALT_MASK));
 		menuItem.getAccessibleContext().setAccessibleDescription("right view");
 		menu.add(menuItem);
+		this.add(menu);
 	}
 	
 	private void addHelp(){
