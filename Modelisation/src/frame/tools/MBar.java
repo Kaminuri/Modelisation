@@ -1,4 +1,4 @@
-package frame;
+package frame.tools;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -18,6 +18,7 @@ public class MBar extends JMenuBar{
 	
 	public MBar(){
 		addFiles();
+		addView();
 		addHelp();
 	}
 	
@@ -60,6 +61,66 @@ public class MBar extends JMenuBar{
 		menuItem = new JMenuItem("Export", KeyEvent.VK_T);
 		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4, ActionEvent.ALT_MASK));
 		menuItem.getAccessibleContext().setAccessibleDescription("Export a File from data base to documents");
+		menu.add(menuItem);
+	}
+	private void addView(){
+		//File
+		menu = new JMenu("Views");
+		menu.setMnemonic(KeyEvent.VK_A);
+		menu.getAccessibleContext().setAccessibleDescription("Views Panels");
+		this.add(menu);
+		
+		//Translation
+		menuItem = new JMenuItem("Translation", KeyEvent.VK_T);
+		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.ALT_MASK));
+		menuItem.getAccessibleContext().setAccessibleDescription("Delete a file from the Data Base");
+		menu.add(menuItem);
+		
+		//Rotation
+		menuItem = new JMenuItem("Rotation", KeyEvent.VK_T);
+		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.ALT_MASK));
+		menuItem.getAccessibleContext().setAccessibleDescription("Delete a file from the Data Base");
+		menu.add(menuItem);
+		
+		menu.addSeparator();
+		
+		//Coupe
+		menuItem = new JMenuItem("Sectional view", KeyEvent.VK_T);
+		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.ALT_MASK));
+		menuItem.getAccessibleContext().setAccessibleDescription("Delete a file from the Data Base");
+		menu.add(menuItem);
+		
+		menu.addSeparator();
+		
+		//Front
+		menuItem = new JMenuItem("Delete", KeyEvent.VK_T);
+		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.ALT_MASK));
+		menuItem.getAccessibleContext().setAccessibleDescription("Delete a file from the Data Base");
+		menu.add(menuItem);
+			
+		//Top
+		menuItem = new JMenuItem("Top view", KeyEvent.VK_T);
+		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.ALT_MASK));
+		menuItem.getAccessibleContext().setAccessibleDescription("Top view");
+		menu.add(menuItem);
+		
+		//Bot
+		menuItem = new JMenuItem("Bottom view", KeyEvent.VK_T);
+		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, ActionEvent.ALT_MASK));
+		menuItem.getAccessibleContext().setAccessibleDescription("Bottom view");
+		menu.add(menuItem);
+		
+		//Left
+		menuItem = new JMenuItem("Left view", KeyEvent.VK_T);
+		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, ActionEvent.ALT_MASK));
+		menuItem.getAccessibleContext().setAccessibleDescription("Left view");
+		menu.add(menuItem);
+		
+		
+		//Right
+		menuItem = new JMenuItem("Right view", KeyEvent.VK_T);
+		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4, ActionEvent.ALT_MASK));
+		menuItem.getAccessibleContext().setAccessibleDescription("right view");
 		menu.add(menuItem);
 	}
 	

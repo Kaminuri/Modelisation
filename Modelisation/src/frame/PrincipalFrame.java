@@ -11,6 +11,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.KeyStroke;
 
+import frame.tools.MBar;
+
 
 public class PrincipalFrame extends JFrame{
 	private MBar menuBar;
