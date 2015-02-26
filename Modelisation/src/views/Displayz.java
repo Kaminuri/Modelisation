@@ -21,7 +21,6 @@ public class Displayz extends JPanel{
 	public void paint(Graphics g){
 		Graphics2D g2 = (Graphics2D) g;
 		for (Segment seg : Const.segments) {
-			
 			g2.draw(new Line2D.Double(seg.getP1().getX(), seg.getP1().getY(), seg.getP2().getX(), seg.getP2().getY()));
 		}
 
