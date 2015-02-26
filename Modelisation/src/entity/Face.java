@@ -16,13 +16,6 @@ public class Face {
 		float x = 0, y =0, z = 0;
 		return new Point(x, y, z);
 	}
-	public Point[] getXs(){
-		Point[] rep = new Point[3];
-		rep[0] = s1.getP1();
-		rep[1] = s1.getP2();
-		rep[2] = s2.getP2();
-		return rep;
-	}
 
 	public Point[] getPoints(){
 		Point[] tab = new Point[3];

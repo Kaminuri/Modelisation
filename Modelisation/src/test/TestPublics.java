@@ -1,4 +1,4 @@
-package teste;
+package test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import publics.Coordonnees;
 
-public class TestePublics {
+public class TestPublics {
 	
 	Coordonnees c = new Coordonnees(5,5,5);
 	
