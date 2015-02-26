@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import views.Displayz;
+import frame.tools.InternalFrameOption;
 import frame.tools.MBar;
 
 
@@ -28,17 +29,8 @@ public class PrincipalFrame extends JFrame{
 	    setLocation(20, 20);
 	    
 	    Displayz dtp = new Displayz();
-	    JInternalFrame mboxFrame = new JInternalFrame("Mail Reader", true,true, true, true);
-        JLabel reader = new JLabel("Mail Reader Would Be Here");
-        mboxFrame.setContentPane(reader);
-        mboxFrame.setSize(400, 300);
-        mboxFrame.setLocation(50, 50);
-        mboxFrame.setVisible(true);
-        dtp.add(mboxFrame);
-
-	    JPanel ok = new JPanel();
-	    //ok.add(new JLabel("Coucou test"));
-	    ok.add(dtp);
+	    InternalFrameOption ifo = new InternalFrameOption();
+	    dtp.add(ifo);
 	    setContentPane(dtp);
 	    
 		menuBar = new MBar();

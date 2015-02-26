@@ -1,10 +1,18 @@
 package frame.tools;
 
 import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+
+import panels.OptionPanel;
 
 public class InternalFrameOption extends JInternalFrame{
 	
 	public InternalFrameOption(){
-		super();
+		super("",false,true,false, true);
+		OptionPanel op = new OptionPanel();
+		setContentPane(op);
+	    setSize(250,70);
+	    setLocation(50, 50);
+	    setVisible(true);
 	}
 }
