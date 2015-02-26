@@ -2,11 +2,11 @@ package views;
 
 import javax.swing.JPanel;
 
-public class View extends JPanel{
+public class Displayz extends JPanel{
 	
 	//Chacal !
 
-	public View(){
+	public Displayz(){
 		 
 	}
 }

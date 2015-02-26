@@ -11,6 +11,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.KeyStroke;
 
+import views.Displayz;
 import frame.tools.MBar;
 
 
@@ -19,10 +20,11 @@ public class PrincipalFrame extends JFrame{
 	public PrincipalFrame(){
 		menuBar = new MBar();
 		setJMenuBar(menuBar);
-		//this.getContentPane().add();
+		Displayz d = new Displayz();
+		this.getContentPane().add(d);
+		setExtendedState(this.MAXIMIZED_BOTH);
 		this.setResizable(true);
 		this.pack();
-		
 	    this.setLocationRelativeTo(null);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setVisible(true);
