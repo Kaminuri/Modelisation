@@ -8,9 +8,7 @@ public class Point {
 		c = new Coordonnees(x, y, z);
 	}
 	public double scalarProduct(Point p){
-		return this.getY()*p.getZ() - p.getY()*this.getZ() 
-		+ this.getZ()*p.getX()- this.getX()*p.getZ() 
-		+ this.getX()*p.getY() - this.getY()*p.getX();
+		return c.getX()*p.getX()+c.getY()*p.getY()+c.getZ()*p.getZ();
 	}
 	public void multiply(int m){
 		c = new Coordonnees(c.getX()*m, c.getY()*m, c.getZ()*m);

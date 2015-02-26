@@ -14,12 +14,12 @@ public class FileLoader {
 	private double x, y , z;
 	private Point p1, p2;
 	private Segment s1,s2,s3;
-	
+	private String fileName = "cone.gts";
 	public FileLoader(){
 		clearLists();
 		String sta;
 		String currnt;
-		try(BufferedReader br = new BufferedReader(new FileReader("src/models/cone.gts"))){
+		try(BufferedReader br = new BufferedReader(new FileReader("src/models/"+ fileName))){
 			sta = br.readLine();
 			initNbs(sta);
 			for(int i = 0; i<nbPoint; i++){
