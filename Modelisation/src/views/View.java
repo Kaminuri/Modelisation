@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 
 public class View extends JPanel{
 	
-	int c;
+	//Chacal !
 
 	public View(){
 		 
