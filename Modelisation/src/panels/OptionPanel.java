@@ -1,6 +1,7 @@
 package panels;
 
 import java.awt.Color;
+import java.awt.GridLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -8,6 +9,6 @@ import javax.swing.JPanel;
 public class OptionPanel extends JPanel{
 	public OptionPanel(){
 		super();
-		setBackground(Color.GREEN);
+		this.setLayout(new GridLayout(1,4));
 	}
 }
