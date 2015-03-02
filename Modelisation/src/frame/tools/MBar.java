@@ -70,6 +70,27 @@ public class MBar extends JMenuBar{
 		menu.setMnemonic(KeyEvent.VK_A);
 		menu.getAccessibleContext().setAccessibleDescription("Views Panels");
 		
+		//Normal Zoom
+		menuItem = new JMenuItem("Normal Zoom",new ImageIcon("pictures/translationIcone.jpg") );
+		/*menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.ALT_MASK));
+		menuItem.getAccessibleContext().setAccessibleDescription("Delete a file from the Data Base");*/
+		menu.add(menuItem);
+		
+		
+		//+Zoom
+		menuItem = new JMenuItem("+ Zoom",new ImageIcon("pictures/translationIcone.jpg") );
+		/*menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.ALT_MASK));
+		menuItem.getAccessibleContext().setAccessibleDescription("Delete a file from the Data Base");*/
+		menu.add(menuItem);
+		
+		
+		//-Zoom
+		menuItem = new JMenuItem("- Zoom",new ImageIcon("pictures/translationIcone.jpg") );
+		/*menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.ALT_MASK));
+		menuItem.getAccessibleContext().setAccessibleDescription("Delete a file from the Data Base");*/
+		menu.add(menuItem);
+		
+		menu.addSeparator();
 		//Translation
 		menuItem = new JMenuItem("Translation",new ImageIcon("pictures/translationIcone.jpg") );
 		/*menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.ALT_MASK));
@@ -93,9 +114,9 @@ public class MBar extends JMenuBar{
 		menu.addSeparator();
 		
 		//Front
-		menuItem = new JMenuItem("Delete", KeyEvent.VK_T);
+		menuItem = new JMenuItem("Front view", KeyEvent.VK_T);
 		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.ALT_MASK));
-		menuItem.getAccessibleContext().setAccessibleDescription("Delete a file from the Data Base");
+		menuItem.getAccessibleContext().setAccessibleDescription("Front view");
 		menu.add(menuItem);
 			
 		//Top
