@@ -2,7 +2,6 @@ package panels;
 
 import java.awt.GridLayout;
 import java.awt.Image;
-import java.awt.Toolkit;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -15,7 +14,7 @@ public class OptionPanel extends JPanel{
 	public OptionPanel(){
 		//super();
 		this.setLayout(new GridLayout(1,5));
-		nZoom = new JButton( new ImageIcon(Toolkit.getDefaultToolkit().getImage("/src/pictures/Zoom +.jpg")));
+		nZoom = new JButton();
 		mZoom = new JButton();
 		pZoom = new JButton();
 		rotation = new JButton();
@@ -33,15 +32,7 @@ public class OptionPanel extends JPanel{
 		nZoom.setIcon(new ImageIcon(""));
 	}
 	private void initPZoom(){
-		 try {
-			    Image img = ImageIO.read(getClass().getResource("/Modelisation/src/pictures/Zoom+.jpg"));
-			    pZoom.setIcon(new ImageIcon(img));
-			  } catch (IOException ex) {
-				  System.out.println("Wow Dat error");
-			  }
-//		ImageIcon tmp = new ImageIcon(Toolkit.getDefaultToolkit().getImage());
-//		pZoom.setIcon(tmp);
-//		System.out.println("ok ?");
+		pZoom.setIcon(new ImageIcon("src/pictures/Zoom+.jpg"));
 	}
 	private void initMZoom(){
 		nZoom.setIcon(new ImageIcon(""));
