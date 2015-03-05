@@ -1,5 +1,6 @@
 package panels;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.io.IOException;
@@ -32,7 +33,13 @@ public class OptionPanel extends JPanel{
 		nZoom.setIcon(new ImageIcon(""));
 	}
 	private void initPZoom(){
-		pZoom.setIcon(new ImageIcon("src/pictures/Zoom+.jpg"));
+		try {
+		    Image img = ImageIO.read(getClass().getResource("src/pictures/Zoom+.jpg"));
+		    pZoom.setIcon(new ImageIcon(img));
+		  } catch (IOException ex) {
+		  }
+		//pZoom.setIcon(new ImageIcon("src/pictures/Zoom+.jpg"));
+		pZoom.setSize(new Dimension(10,70));
 	}
 	private void initMZoom(){
 		nZoom.setIcon(new ImageIcon(""));

@@ -11,7 +11,7 @@ public class InternalFrameOption extends JInternalFrame{
 		super("",false,true,false, true);
 		OptionPanel op = new OptionPanel();
 		setContentPane(op);
-		setSize(250,70);
+		setSize(240,70);
 		setLocation(50, 50);
 	   	setVisible(true);
 	}
