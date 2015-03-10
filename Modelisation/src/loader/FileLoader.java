@@ -19,7 +19,7 @@ public class FileLoader {
 		clearLists();
 		String sta;
 		String currnt;
-		try(BufferedReader br = new BufferedReader(new FileReader("src/models/"+ fileName))){
+		try(BufferedReader br = new BufferedReader(new FileReader("src/resources/models/"+ fileName))){
 			sta = br.readLine();
 			initNbs(sta);
 			for(int i = 0; i<nbPoint; i++){
