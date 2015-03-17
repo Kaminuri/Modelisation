@@ -8,6 +8,8 @@ import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import publics.Const;
+
 import views.Displayz;
 import frame.tools.InternalFrameOption;
 import frame.tools.MBar;
@@ -22,10 +24,10 @@ public class PrincipalFrame extends JFrame{
 	private MBar menuBar;
 	public PrincipalFrame(){
 		
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	    screenSize.width -= 42;
-	    screenSize.height -= 42;
-	    setPreferredSize(screenSize);
+		Const.screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		Const.screenSize.width -= 42;
+		Const.screenSize.height -= 42;
+	    setPreferredSize(Const.screenSize);
 	    setLocation(20, 20);
 	    
 	    Displayz dtp = new Displayz();
