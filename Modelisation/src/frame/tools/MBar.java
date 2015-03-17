@@ -59,9 +59,9 @@ public class MBar extends JMenuBar{
 		menu.addSeparator();
 		
 		//Quit
-		menuItem = new JMenuItem("Export", KeyEvent.VK_T);
+		menuItem = new JMenuItem("Quit", KeyEvent.VK_T);
 		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4, ActionEvent.ALT_MASK));
-		menuItem.getAccessibleContext().setAccessibleDescription("Export a File from data base to documents");
+		menuItem.getAccessibleContext().setAccessibleDescription("Quit a application");
 		menu.add(menuItem);
 	}
 	private void addView(){
