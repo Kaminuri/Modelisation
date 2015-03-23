@@ -2,8 +2,8 @@ package publics;
 
 public class Coordonnees {
 	private double x, y, z;
-	private static int transX = 100;
-	private static int transY = -100;
+	private static int zoomX = 100;
+	private static int zoomY = -100;
 	
 	public Coordonnees(double x1,double y1,double z2){
 		x = x1;
@@ -32,26 +32,26 @@ public class Coordonnees {
 		return x ==c.x && y == c.y && z == c.z;
 	}
 	
-	public static void increaseTransX(){
-		transX++;
+	public static void increaseZoomX(){
+		zoomX++;
 	}
 	
-	public static void decreaseTransX(){
-		transX--;
+	public static void decreaseZoomX(){
+		zoomX--;
 	}
 
-	public static void increaseTransY(){
-		transY++;
+	public static void increaseZoomY(){
+		zoomY++;
 	}
 	
-	public static void decreaseTransY(){
-		transY--;
+	public static void decreaseZoomY(){
+		zoomY--;
 	}
-	public static int getTransX() {
-		return transX;
+	public static int getZoomX() {
+		return zoomX;
 	}
-	public static int getTransY() {
-		return transY;
+	public static int getZoomY() {
+		return zoomY;
 	}
 	
 	
