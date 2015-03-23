@@ -31,7 +31,7 @@ public class PrincipalFrame extends JFrame{
 	    setLocation(20, 20);
 	    
 	    Displayz dtp = new Displayz();
-	    InternalFrameOption ifo = new InternalFrameOption();
+	    InternalFrameOption ifo = new InternalFrameOption(dtp);
 	    dtp.add(ifo);
 	    setContentPane(dtp);
 	    
