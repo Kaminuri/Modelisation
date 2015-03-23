@@ -17,26 +17,36 @@ import publics.Coordonnees;
 import views.Displayz;
 
 public class OptionPanel extends JPanel{
-	private JButton nZoom , mZoom , pZoom, rotation, translationH, translationB, translationG, translationD ;
-	public OptionPanel(){
+	private JButton nZoom , mZoom , pZoom, rotationG, rotationD, translationH, translationB, translationG, translationD ;
+	private Displayz d;
+	public OptionPanel(Displayz d){
 		//super();
+		this.d = d;
 		this.setLayout(new GridLayout(1,8));
 		nZoom = new JButton();
 		mZoom = new JButton();
 		pZoom = new JButton();
-		rotation = new JButton();
+		rotationG = new JButton();
+		rotationD = new JButton();
 		translationH = new JButton();
 		translationB = new JButton();
 		translationG = new JButton();
 		translationD = new JButton();
+		initNZoom();
+		initMZoom();
 		initPZoom();
+		initRotationG();
+	//	initRotationD();
 		initTranslationH();
-
+		initTranslationB();
+		initTranslationD();
+		initTranslationG();
 
 		add(pZoom);
 		add(nZoom);
 		add(mZoom);
-		add(rotation);
+		add(rotationG);
+		add(rotationD);
 		add(translationH);
 		add(translationB);
 		add(translationG);
@@ -47,6 +57,16 @@ public class OptionPanel extends JPanel{
 	private void initNZoom(){
 		//	nZoom.setIcon(new ImageIcon(""));
 		nZoom.setText("-");
+		nZoom.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				Coordonnees.increaseZoomY();
+				Coordonnees.decreaseZoomX();
+				d.repaint();				
+			}
+		});
 		nZoom.setSize(new Dimension(10,70));
 
 
@@ -60,7 +80,10 @@ public class OptionPanel extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				//Quand on clic sur le bouton -> zoom avant
-				
+
+				Coordonnees.increaseZoomX();
+				Coordonnees.decreaseZoomY();
+				d.repaint();
 			}
 		}); 
 
@@ -73,7 +96,6 @@ public class OptionPanel extends JPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Coordonnees.decreaseTransX();
 				
 			}
 		});
@@ -98,7 +120,7 @@ public class OptionPanel extends JPanel{
 	private void initMZoom(){
 		nZoom.setIcon(new ImageIcon(""));
 	}
-	private void initRotation(){
+	private void initRotationG(){
 		nZoom.setIcon(new ImageIcon(""));
 	}
 	
