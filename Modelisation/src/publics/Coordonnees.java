@@ -33,19 +33,19 @@ public class Coordonnees {
 	}
 	
 	public static void increaseZoomX(){
-		zoomX++;
+		zoomX= zoomX + 2;
 	}
 	
 	public static void decreaseZoomX(){
-		zoomX--;
+		zoomX= zoomX - 2;
 	}
 
 	public static void increaseZoomY(){
-		zoomY++;
+		zoomY = zoomY + 2;
 	}
 	
 	public static void decreaseZoomY(){
-		zoomY--;
+		zoomY = zoomY - 2;
 	}
 	public static int getZoomX() {
 		return zoomX;
