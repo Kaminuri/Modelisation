@@ -47,6 +47,12 @@ public class Coordonnees {
 	public static void decreaseZoomY(){
 		zoomY = zoomY - 2;
 	}
+	public static int getZoomX() {
+		return zoomX;
+	}
+	public static int getZoomY() {
+		return zoomY;
+	}
 	
 	
 	
