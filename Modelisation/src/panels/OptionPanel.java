@@ -96,24 +96,46 @@ public class OptionPanel extends JPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				Coordonnees.decreaseTransY();
+				d.repaint();
 			}
 		});
 		translationH.setSize(new Dimension(10,70));
 	}
 	private void initTranslationB(){
 		translationB.setText("↓");
-		
+		translationB.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Coordonnees.increaseTransY();
+				d.repaint();
+			}
+		});
 		translationB.setSize(new Dimension(10,70));
 	}
 	private void initTranslationG(){
 		translationG.setText("←");
-
+		translationG.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Coordonnees.decreaseTransX();
+				d.repaint();
+			}
+		});
 		translationG.setSize(new Dimension(10,70));
 	}
 	private void initTranslationD(){
 		translationD.setText("→");
-		
+		translationD.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Coordonnees.increaseTransX();
+				d.repaint();
+			}
+		});
 		translationD.setSize(new Dimension(10,70));
 	}
 
