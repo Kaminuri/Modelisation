@@ -29,8 +29,8 @@ public class Displayz extends JPanel {
 		double x0 = Const.screenSize.getWidth() / 2;
 		double y0 = Const.screenSize.getHeight() / 2;
 		for(int i = 0; i < Const.points.size(); i++){
-			listeX[i] = (int)(Const.points.get(i).getX()*Coordonnees.getZoomX() + x0);
-			listeY[i] = (int)(Const.points.get(i).getY()*Coordonnees.getZoomY() + y0);
+			listeX[i] = (int)(Const.points.get(i).getX()*Coordonnees.getZoomX() + x0 + Coordonnees.getTransX());
+			listeY[i] = (int)(Const.points.get(i).getY()*Coordonnees.getZoomY() + y0 + Coordonnees.getTransY());
 		}
 		g.drawPolygon(listeX, listeY, Const.points.size());
 
