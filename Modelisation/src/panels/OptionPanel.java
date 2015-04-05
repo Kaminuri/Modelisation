@@ -1,6 +1,7 @@
 package panels;
 
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -20,7 +21,6 @@ public class OptionPanel extends JPanel{
 	private JButton nZoom , mZoom , pZoom, rotationG, rotationD, translationH, translationB, translationG, translationD ;
 	private Displayz d;
 	public OptionPanel(Displayz d){
-		//super();
 		this.d = d;
 		this.setLayout(new GridLayout(1,8));
 		nZoom = new JButton();
@@ -83,6 +83,7 @@ public class OptionPanel extends JPanel{
 
 				Coordonnees.increaseZoomX();
 				Coordonnees.decreaseZoomY();
+				d.updateUI();
 				d.repaint();
 			}
 		}); 

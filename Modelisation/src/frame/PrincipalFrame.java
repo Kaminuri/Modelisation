@@ -37,7 +37,7 @@ public class PrincipalFrame extends JFrame{
 	    
 		menuBar = new MBar();
 		setJMenuBar(menuBar);
-
+		
 		
 		
 		
@@ -47,6 +47,9 @@ public class PrincipalFrame extends JFrame{
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setVisible(true);
 	}
+	
+	
+	
 	public static void main(String[] args) {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 	        public void run() {
