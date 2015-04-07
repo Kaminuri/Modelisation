@@ -14,7 +14,7 @@ public class FileLoader {
 	private double x, y , z;
 	private Point p1, p2;
 	private Segment s1,s2,s3;
-	private String fileName = "cube.gts";
+	private String fileName = "cone.gts";
 	public FileLoader(){
 		clearLists();
 		String sta;
