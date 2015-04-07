@@ -3,10 +3,12 @@ package entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import loader.FileLoader;
 import publics.Const;
 
 public class Item {
 	private List<Face> f;
+	public FileLoader fl;
 	
 	public Item(){
 		f = new ArrayList<Face>();
@@ -48,5 +50,11 @@ public class Item {
 			}
 		}
 		return tab;
+	}
+
+
+	public void load() {
+		fl = new FileLoader();
+		
 	}
 }
