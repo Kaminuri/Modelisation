@@ -14,7 +14,6 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import publics.Const;
-import publics.Coordonnees;
 import views.Displayz;
 
 public class OptionPanel extends JPanel{
@@ -62,8 +61,8 @@ public class OptionPanel extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				Coordonnees.increaseZoomY();
-				Coordonnees.decreaseZoomX();
+				d.increaseZoomY();
+				d.decreaseZoomX();
 				d.repaint();				
 			}
 		});
@@ -81,9 +80,8 @@ public class OptionPanel extends JPanel{
 			public void actionPerformed(ActionEvent e) {
 				//Quand on clic sur le bouton -> zoom avant
 
-				Coordonnees.increaseZoomX();
-				Coordonnees.decreaseZoomY();
-				d.updateUI();
+				d.increaseZoomX();
+				d.decreaseZoomY();
 				d.repaint();
 			}
 		}); 
@@ -97,7 +95,7 @@ public class OptionPanel extends JPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Coordonnees.decreaseTransY();
+				d.decreaseTransY();
 				d.repaint();
 			}
 		});
@@ -109,11 +107,12 @@ public class OptionPanel extends JPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Coordonnees.increaseTransY();
+				d.increaseTransY();
 				d.repaint();
 			}
 		});
 		translationB.setSize(new Dimension(10,70));
+		d.repaint();
 	}
 	private void initTranslationG(){
 		translationG.setText("←");
@@ -121,11 +120,12 @@ public class OptionPanel extends JPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Coordonnees.decreaseTransX();
+				d.decreaseTransX();
 				d.repaint();
 			}
 		});
 		translationG.setSize(new Dimension(10,70));
+		d.repaint();
 	}
 	private void initTranslationD(){
 		translationD.setText("→");
@@ -133,7 +133,7 @@ public class OptionPanel extends JPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Coordonnees.increaseTransX();
+				d.increaseTransX();
 				d.repaint();
 			}
 		});
