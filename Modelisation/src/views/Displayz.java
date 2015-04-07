@@ -26,7 +26,7 @@ public class Displayz extends JPanel {
 	}
 	public void paintComponent(Graphics g){
 		g.setColor(Color.WHITE);
-		g.fillRect(0, 0, Const.screenSize.width, Const.screenSize.height);
+		g.fillRect(0, 0, Const.screenSize.width,Const.screenSize.height);
 		g.setColor(Color.BLACK);
 		int [] listeX = new int[Const.points.size()];
 		int [] listeY = new int[Const.points.size()];
