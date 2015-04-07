@@ -9,8 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import publics.Const;
-
 import views.Displayz;
+import entity.Item;
 import frame.tools.InternalFrameOption;
 import frame.tools.MBar;
 
@@ -29,8 +29,10 @@ public class PrincipalFrame extends JFrame{
 		Const.screenSize.height -= 42;
 	    setPreferredSize(Const.screenSize);
 	    setLocation(20, 20);
+	    Item i = new Item();
+	    i.load();
 	    
-	    Displayz dtp = new Displayz();
+	    Displayz dtp = new Displayz(i);
 	    InternalFrameOption ifo = new InternalFrameOption(dtp);
 	    dtp.add(ifo);
 	    setContentPane(dtp);
