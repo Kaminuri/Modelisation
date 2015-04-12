@@ -1,23 +1,35 @@
 package frame.tools;
 
+import java.awt.Desktop;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JFileChooser;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.KeyStroke;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
+import publics.Const;
 
 public class MBar extends JMenuBar{
 	private JMenu menu, submenu;
 	private JMenuItem menuItem;
 	private JRadioButtonMenuItem rbMenuItem;
 	private JCheckBoxMenuItem cbMenuItem;
-	
+	JFileChooser chooser;
+   
 	public MBar(){
+		chooser = new JFileChooser();
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("Model 3D GTS","gts");
+		chooser.setFileFilter(filter);
 		addFiles();
 		addView();
 		addHelp();
@@ -38,6 +50,15 @@ public class MBar extends JMenuBar{
 		
 		//Import
 		menuItem = new JMenuItem("Import", KeyEvent.VK_T);
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				chooser.showOpenDialog(null);
+				if(chooser.getSelectedFile() != null)
+					//Utilisable pour l'instant par tout le monde
+					Const.ImportFileTmp = chooser.getSelectedFile();
+			}
+		});
 		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, ActionEvent.ALT_MASK));
 		menuItem.getAccessibleContext().setAccessibleDescription("Try to import a File from your documents");
 		menu.add(menuItem);

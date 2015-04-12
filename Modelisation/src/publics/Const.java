@@ -2,6 +2,7 @@ package publics;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.File;
 import java.util.ArrayList;
 
 import entity.Face;
@@ -13,4 +14,5 @@ public class Const {
 	public static ArrayList<Face> faces = new ArrayList<>();
 	public static ArrayList<Point> points = new ArrayList<>();
 	public static ArrayList<Segment> segments = new ArrayList<>();
+	public static File ImportFileTmp;
 }
