@@ -61,7 +61,7 @@ public class OptionPanel extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				d.increaseZoomY();
+				d.decreaseZoomY();
 				d.decreaseZoomX();
 				d.repaint();				
 			}
@@ -81,7 +81,7 @@ public class OptionPanel extends JPanel{
 				//Quand on clic sur le bouton -> zoom avant
 
 				d.increaseZoomX();
-				d.decreaseZoomY();
+				d.increaseZoomY();
 				d.repaint();
 			}
 		}); 
