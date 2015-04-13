@@ -14,5 +14,4 @@ public class Const {
 	public static ArrayList<Face> faces = new ArrayList<>();
 	public static ArrayList<Point> points = new ArrayList<>();
 	public static ArrayList<Segment> segments = new ArrayList<>();
-	public static File ImportFileTmp;
 }
