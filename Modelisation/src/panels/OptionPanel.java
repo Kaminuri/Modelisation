@@ -141,11 +141,21 @@ public class OptionPanel extends JPanel{
 	}
 
 	private void initMZoom(){
-		nZoom.setIcon(new ImageIcon(""));
+		rotationG.setText("rot");
+		rotationG.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				d.rotationX(0.5);
+				d.repaint();
+			}
+		});
 	}
 	private void initRotationG(){
 		nZoom.setIcon(new ImageIcon(""));
 	}
+	
 	
 	
 
