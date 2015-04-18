@@ -19,7 +19,17 @@ public class Point implements Comparable<Point>,Comparator<Point>{
 	public void multiply(int m){
 		c = new Coordonnees(c.getX()*m, c.getY()*m, c.getZ()*m);
 	}
-
+	
+	public void setX(double x){
+		c.setX(x);
+	}
+	public void setY(double y){
+		c.setY(y);
+	}
+	public void setZ(double z){
+		c.setZ(z);
+	}
+	
 	public double getX(){
 		return c.getX();
 	}
