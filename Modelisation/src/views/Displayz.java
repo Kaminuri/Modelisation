@@ -52,12 +52,14 @@ public class Displayz extends JPanel {
 	
 	public void rotationX(double angle){
 		for(int i = 0;i<listeX.length;i++){
-			System.out.println(i+ " : " + listeY[i]);
-			listeY[i] = (int) (listeY[i]*Math.cos(angle)+listeZ[i]*Math.sin(angle));
-			System.out.println(i+ " : " + listeY[i] + "\n\n");
+			//System.out.println(i+ " : " + listeY[i]);
+			//listeY[i] = (int) (listeY[i]*Math.cos(angle)+listeZ[i]*Math.sin(angle));
+			Const.points.get(i).setY(listeY[i]*Math.cos(angle)+listeZ[i]*Math.sin(angle));
 
-			listeZ[i] = (int)(listeY[i]*-Math.sin(angle)+listeZ[i]*Math.cos(angle));
-			
+		//	System.out.println(i+ " : " + listeY[i] + "\n\n");
+
+			//listeZ[i] = (int)(listeY[i]*-Math.sin(angle)+listeZ[i]*Math.cos(angle));
+			Const.points.get(i).setZ(listeY[i]*-Math.sin(angle)+listeZ[i]*Math.cos(angle));
 		}
 	}
 	
@@ -66,6 +68,7 @@ public class Displayz extends JPanel {
 			listeX[i] = (int) (listeX[i]*Math.cos(angle)-listeZ[i]*Math.sin(angle));
 			listeZ[i] = (int)(listeX[i]*Math.sin(angle)+listeZ[i]*Math.cos(angle));
 			
+			Const.points.get(i).setX(listeX[i]*Math.cos(angle)-listeZ[i]*Math.sin(angle));
 		}
 	}
 	
