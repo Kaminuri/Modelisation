@@ -54,9 +54,11 @@ public class MBar extends JMenuBar{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				chooser.showOpenDialog(null);
-				if(chooser.getSelectedFile() != null)
+				if(chooser.getSelectedFile() != null){
 					//Utilisable pour l'instant par tout le monde
-					Const.ImportFileTmp = chooser.getSelectedFile();
+					File ImportFileTmp = chooser.getSelectedFile();
+					new FileInsert(ImportFileTmp);
+				}
 			}
 		});
 		menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, ActionEvent.ALT_MASK));

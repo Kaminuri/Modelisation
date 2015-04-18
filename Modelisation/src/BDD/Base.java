@@ -2,11 +2,14 @@ package BDD;
 import java.sql.*;
 import java.util.HashMap;
 
+/*
+ * @author Eric Lefebvre 
+ */
+
 public class Base  {
 	String url, nom, mdp;
 	Connection con;
 
-	// Initialisation et enregistrement du driver.
 	public Base(){
 		con = null;
 		try{
@@ -19,17 +22,66 @@ public class Base  {
 		mdp = null;
 	}
 
+	/*
+	 * Renvoie toutes les informations de la Base de donnee
+	 * @return une hasmap de hasmap ayant comme cle le nom du fichier.
+	 */
 	public HashMap<String, HashMap<String, String>> select(){
 		HashMap<String, HashMap<String, String>> liste = new HashMap<String, HashMap<String, String>>();
 		try{
-			System.out.println("test");
-			con = DriverManager.getConnection(url,nom,mdp);
-			System.out.println("test2");
+			con = DriverManager.getConnection(this.url,this.nom,this.mdp);
 			Statement stmt = con.createStatement();
-			System.out.println("test3");
 			String query = "Select * from Objets";
 			ResultSet rs = stmt.executeQuery(query);
+			ResultSetMetaData metadata = rs.getMetaData();
+			int nombreColonnes = metadata.getColumnCount();
+			while(rs.next()){
+				HashMap<String, String> valeur = new HashMap<String, String>();
+				for(int i = 0; i < nombreColonnes ; i++){
+					String nameColone = metadata.getColumnName(i+1);
+					valeur.put(nameColone, rs.getString(nameColone));
+				}
+				liste.put(metadata.getColumnName(1), valeur);
+			} 	
+		}
+		catch(Exception e){System.out.println(e.getMessage());}
+		finally {
+			try{con.close();} catch (Exception e){System.out.println(e.getMessage());}
+		}
+		return liste;
+	}
+	
+	/*
+	 * Pareil que le select() mais avec des mots pour selectionner que les fichier correcpondant
+	 * @return une hasmap de hasmap ayant pour le cle le nom du fichier
+	 */
+	
+	public HashMap<String, HashMap<String, String>> recherche(String[] tags){
+		HashMap<String, HashMap<String, String>> liste = new HashMap<String, HashMap<String, String>>();
+		try{
+			con = DriverManager.getConnection(this.url,this.nom,this.mdp);
+			Statement stmt = con.createStatement();
+			int taille = tags.length;
+			String query = "Select * from Objets where (";
 			System.out.println(query);
+			for(int i = 0; i < taille; i++){
+				for(int j = 1; j < 4+1; j++){
+					query += "Tag" + j +" = '" + tags[i] +"'";
+					if(j ==  4){
+						query += ")";
+					}
+					else{
+						query += " OR ";
+					}
+					System.out.println(query);
+				}
+				if( i < taille - 1){
+					query += " AND (";
+				}
+				System.out.println(query);
+			}
+			System.out.println(query);
+			ResultSet rs = stmt.executeQuery(query);
 			ResultSetMetaData metadata = rs.getMetaData();
 			int nombreColonnes = metadata.getColumnCount();
 			while(rs.next()){
@@ -48,9 +100,12 @@ public class Base  {
 		return liste;
 	}
 
+	/*
+	 * Permet d'inserer un nouveau fichier dans la base de donnees
+	 */
 	public void insert(String nom, String nomfichier, String tags, int points, int segments, int faces){
 		try{
-			con = DriverManager.getConnection(url,nom,mdp);
+			con = DriverManager.getConnection(this.url,this.nom,this.mdp);
 			Statement stmt = con.createStatement();
 			String query = "Insert into Objets values ('" + nom + "','src\\resources\\models\\" + nomfichier + "','" + tags + "','" + points + "','" + segments + "','" + faces + "')";
 			stmt.executeUpdate(query);
@@ -60,13 +115,57 @@ public class Base  {
 			try{con.close();} catch (Exception e){System.out.println(e.getMessage());}
 		}
 	}
+	
+	/*
+	 *Permet de supprimer un fichier de la base de donnee 
+	 */
+	
+	public void delete(String nom){
+		try{
+			con = DriverManager.getConnection(this.url,this.nom,this.mdp);
+			Statement stmt = con.createStatement();
+			String query = "Delete From Objets where nom = '" + nom + "'";
+			stmt.executeUpdate(query);
+		}
+		catch(Exception e){System.out.println(e.getMessage());}
+		finally {
+			try{con.close();} catch (Exception e){System.out.println(e.getMessage());}
+		}
+	}
+	
+	/*
+	 * Permet de verifier si le nom existe deja.
+	 * @return vrai si il existe
+	 */
+	
+	public boolean estDeja(String nom){
+		boolean deja = false;
+		try{
+			con = DriverManager.getConnection(this.url,this.nom,this.mdp);
+			Statement stmt = con.createStatement();
+			String query = "Select * from Objets";
+			ResultSet rs = stmt.executeQuery(query);
+			if(rs.next() && nom.equals(rs.getString("nom"))){
+				deja = true;
+			}
+		}
+		catch(Exception e){System.out.println(e.getMessage());}
+		finally {
+			try{con.close();} catch (Exception e){System.out.println(e.getMessage());}
+		}
+		return deja;
+	}
+
 
 	public static void main(String [] args){
 		Base a = new Base();
-		HashMap<String, HashMap<String, String>> b = a.select();
-		//for(int i = 0; i < b.size(); i++){
+		String[] s = new String[2];
+		s[0] = "test";
+		s[1] = "test2";
+		HashMap<String, HashMap<String, String>> b = a.recherche(s);
+		System.out.println(a.estDeja("Test2"));
 		System.out.println(b.values());
-		//}
+
 
 	}
 
