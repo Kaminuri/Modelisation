@@ -51,16 +51,13 @@ public class Displayz extends JPanel {
 	
 	
 	public void rotationX(double angle){
-		for(int i = 0;i<listeX.length;i++){
-			//System.out.println(i+ " : " + listeY[i]);
-			//listeY[i] = (int) (listeY[i]*Math.cos(angle)+listeZ[i]*Math.sin(angle));
-			Const.points.get(i).setY(listeY[i]*Math.cos(angle)+listeZ[i]*Math.sin(angle));
-
-		//	System.out.println(i+ " : " + listeY[i] + "\n\n");
-
-			//listeZ[i] = (int)(listeY[i]*-Math.sin(angle)+listeZ[i]*Math.cos(angle));
-			Const.points.get(i).setZ(listeY[i]*-Math.sin(angle)+listeZ[i]*Math.cos(angle));
+		 //FORMULES CORRIGER ET APPLICABLE ! UTILISE PAS CES PUTAINS DE LISTE AVEC LE ZOOM AU DESSUS NORMAL QUE T'AS DES RESULTATS DE CHIOTTES COMME CA !?
+		//Cordialement moi.
+		for(int i = 0;i<Const.points.size();i++){
+			Const.points.get(i).setY((Const.points.get(i).getY()*Math.cos(angle))+(Const.points.get(i).getZ()*-Math.sin(angle)));
+			Const.points.get(i).setZ(Const.points.get(i).getY()*Math.sin(angle)+Const.points.get(i).getZ()*Math.cos(angle));
 		}
+		repaint();
 	}
 	
 	public void rotationY(double angle){
