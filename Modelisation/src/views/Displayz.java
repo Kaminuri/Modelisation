@@ -14,9 +14,9 @@ import publics.Const;
 public class Displayz extends JPanel {
 
 	private int zoom;
-	private int zoomX = 100;
-	private int zoomY = -100;
-	private int zoomZ = 100;
+	private int zoomX;
+	private int zoomY;
+	private int zoomZ;
 	private int [] listeX,listeY,listeZ;
 	private int transX,transY,transZ;
 	private static final long serialVersionUID = 1L;
@@ -43,9 +43,10 @@ public class Displayz extends JPanel {
 		for(int i = 0; i < Const.points.size(); i++){
 			listeX[i] = (int)(Const.points.get(i).getX()*zoomX + x0 + transX);
 			listeY[i] = (int)(Const.points.get(i).getY()*zoomY + y0 + transY);
-		//	listeZ[i] = (int)(Const.points.get(i).getZ()*Coordonnees.getZoomZ() + z0 + Coordonnees.getTransZ());
+			listeZ[i] = (int)(Const.points.get(i).getZ()*zoomZ + z0 );
 		}
 		g.drawPolygon(listeX, listeY, Const.points.size());
+		g.drawPolygon(listeX, listeZ, Const.points.size());
 		
 	}   
 	
