@@ -146,8 +146,7 @@ public class OptionPanel extends JPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				d.rotationX(0.5);
+				d.rotationX(0.1);
 				d.repaint();
 			}
 		});
