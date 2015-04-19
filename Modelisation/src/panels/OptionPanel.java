@@ -17,7 +17,7 @@ import publics.Const;
 import views.Displayz;
 
 public class OptionPanel extends JPanel{
-	private JButton nZoom , mZoom , pZoom, rotationG, rotationD, translationH, translationB, translationG, translationD ;
+	private JButton nZoom , mZoom , pZoom, rotationX, rotationY, translationH, translationB, translationG, translationD ;
 	private Displayz d;
 	public OptionPanel(Displayz d){
 		this.d = d;
@@ -25,16 +25,16 @@ public class OptionPanel extends JPanel{
 		nZoom = new JButton();
 		mZoom = new JButton();
 		pZoom = new JButton();
-		rotationG = new JButton();
-		rotationD = new JButton();
+		rotationX = new JButton();
+		rotationY = new JButton();
 		translationH = new JButton();
 		translationB = new JButton();
 		translationG = new JButton();
 		translationD = new JButton();
 		initNZoom();
-		initMZoom();
+		rotationX();
 		initPZoom();
-		initRotationG();
+		rotationY();
 	//	initRotationD();
 		initTranslationH();
 		initTranslationB();
@@ -44,8 +44,8 @@ public class OptionPanel extends JPanel{
 		add(pZoom);
 		add(nZoom);
 		add(mZoom);
-		add(rotationG);
-		add(rotationD);
+		add(rotationX);
+		add(rotationY);
 		add(translationH);
 		add(translationB);
 		add(translationG);
@@ -140,9 +140,9 @@ public class OptionPanel extends JPanel{
 		translationD.setSize(new Dimension(10,70));
 	}
 
-	private void initMZoom(){
-		rotationG.setText("rot");
-		rotationG.addActionListener(new ActionListener() {
+	private void rotationX(){
+		rotationX.setText("rot");
+		rotationX.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -151,8 +151,18 @@ public class OptionPanel extends JPanel{
 			}
 		});
 	}
-	private void initRotationG(){
-		nZoom.setIcon(new ImageIcon(""));
+	private void rotationY(){
+		rotationY.setText("RotY");
+		rotationY.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				d.rotationY(0.1);
+				d.repaint();
+				
+			}
+		});
 	}
 	
 	
