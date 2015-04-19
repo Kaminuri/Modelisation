@@ -17,25 +17,25 @@ import publics.Const;
 import views.Displayz;
 
 public class OptionPanel extends JPanel{
-	private JButton nZoom , mZoom , pZoom, rotationX, rotationY, translationH, translationB, translationG, translationD ;
+	private JButton nZoom, pZoom, rotationX, rotationY, rotationZ, translationH, translationB, translationG, translationD ;
 	private Displayz d;
 	public OptionPanel(Displayz d){
 		this.d = d;
 		this.setLayout(new GridLayout(1,8));
-		nZoom = new JButton();
-		mZoom = new JButton();
-		pZoom = new JButton();
+		nZoom = new JButton(new ImageIcon("src/resources/pictures/ZoomM.png"));
+		pZoom = new JButton(new ImageIcon("src/resources/pictures/ZoomP.png"));
 		rotationX = new JButton();
 		rotationY = new JButton();
-		translationH = new JButton();
-		translationB = new JButton();
-		translationG = new JButton();
-		translationD = new JButton();
+		rotationZ = new JButton();
+		translationH = new JButton(new ImageIcon("src/resources/pictures/transH.png"));
+		translationB = new JButton(new ImageIcon("src/resources/pictures/transB.png"));
+		translationG = new JButton(new ImageIcon("src/resources/pictures/transG.png"));
+		translationD = new JButton(new ImageIcon("src/resources/pictures/transD.png"));
 		initNZoom();
-		rotationX();
 		initPZoom();
+		rotationX();
 		rotationY();
-	//	initRotationD();
+		rotationZ();
 		initTranslationH();
 		initTranslationB();
 		initTranslationD();
@@ -43,9 +43,9 @@ public class OptionPanel extends JPanel{
 
 		add(pZoom);
 		add(nZoom);
-		add(mZoom);
 		add(rotationX);
 		add(rotationY);
+		add(rotationZ);
 		add(translationH);
 		add(translationB);
 		add(translationG);
@@ -54,8 +54,6 @@ public class OptionPanel extends JPanel{
 	}
 
 	private void initNZoom(){
-		//	nZoom.setIcon(new ImageIcon(""));
-		nZoom.setText("-");
 		nZoom.addActionListener(new ActionListener() {
 			
 			@Override
@@ -66,14 +64,12 @@ public class OptionPanel extends JPanel{
 				d.repaint();				
 			}
 		});
-		nZoom.setSize(new Dimension(10,70));
+		nZoom.setSize(new Dimension(70,70));
 
 
 	}
 	private void initPZoom(){
-		pZoom.setText("+");
-		//	pZoom.setIcon(new ImageIcon("/resources/Zoom+.jpg"));
-		pZoom.setSize(new Dimension(10,70));
+		pZoom.setSize(new Dimension(70,70));
 		pZoom.addActionListener(new ActionListener() {
 
 			@Override
@@ -90,7 +86,6 @@ public class OptionPanel extends JPanel{
 	}
 	
 	private void initTranslationH(){
-		translationH.setText("↑");
 		translationH.addActionListener(new ActionListener() {
 			
 			@Override
@@ -99,10 +94,9 @@ public class OptionPanel extends JPanel{
 				d.repaint();
 			}
 		});
-		translationH.setSize(new Dimension(10,70));
+		translationH.setSize(new Dimension(70,70));
 	}
 	private void initTranslationB(){
-		translationB.setText("↓");
 		translationB.addActionListener(new ActionListener() {
 			
 			@Override
@@ -111,11 +105,10 @@ public class OptionPanel extends JPanel{
 				d.repaint();
 			}
 		});
-		translationB.setSize(new Dimension(10,70));
+		translationB.setSize(new Dimension(70,70));
 		d.repaint();
 	}
 	private void initTranslationG(){
-		translationG.setText("←");
 		translationG.addActionListener(new ActionListener() {
 			
 			@Override
@@ -124,11 +117,10 @@ public class OptionPanel extends JPanel{
 				d.repaint();
 			}
 		});
-		translationG.setSize(new Dimension(10,70));
+		translationG.setSize(new Dimension(70,70));
 		d.repaint();
 	}
 	private void initTranslationD(){
-		translationD.setText("→");
 		translationD.addActionListener(new ActionListener() {
 			
 			@Override
@@ -137,11 +129,11 @@ public class OptionPanel extends JPanel{
 				d.repaint();
 			}
 		});
-		translationD.setSize(new Dimension(10,70));
+		translationD.setSize(new Dimension(70,70));
 	}
 
 	private void rotationX(){
-		rotationX.setText("rot");
+		rotationX.setText("rotX");
 		rotationX.addActionListener(new ActionListener() {
 			
 			@Override
@@ -164,7 +156,18 @@ public class OptionPanel extends JPanel{
 			}
 		});
 	}
-	
+	private void rotationZ(){
+		rotationZ.setText("RotZ");
+		rotationZ.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				d.rotationZ(0.1);
+				d.repaint();
+			}
+		});
+	}
 	
 	
 
