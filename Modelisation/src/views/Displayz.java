@@ -32,7 +32,7 @@ public class Displayz extends JPanel {
 	}
 	public void paintComponent(Graphics g){
 		g.setColor(Color.WHITE);
-		g.fillRect(0, 0, Const.screenSize.width,Const.screenSize.height);
+		g.fillRect(0, 0, Const.screenSize.width+50,Const.screenSize.height);
 		g.setColor(Color.BLACK);
 		listeX = new int[Const.points.size()];
 		listeY = new int[Const.points.size()];
@@ -46,7 +46,6 @@ public class Displayz extends JPanel {
 			listeZ[i] = (int)(Const.points.get(i).getZ()*zoomZ + z0 );
 		}
 		g.drawPolygon(listeX, listeY, Const.points.size());
-		g.drawPolygon(listeX, listeZ, Const.points.size());
 		
 	}   
 	
@@ -73,48 +72,48 @@ public class Displayz extends JPanel {
 		}
 	}
 	
-	public   void increaseZoomX(){
+	public void increaseZoomX(){
 		zoomX *= 1.1;
 	}
 
-	public   void decreaseZoomX(){
+	public void decreaseZoomX(){
 		zoomX *= 0.9;
 	}
 
-	public   void increaseZoomY(){
+	public void increaseZoomY(){
 		zoomY *= 1.1;
 	}
 
-	public   void decreaseZoomY(){
+	public void decreaseZoomY(){
 		zoomY *= 0.9;
 	}
-	public   int getZoomX() {	
+	public int getZoomX() {	
 		return zoomX;
 	}
-	public   int getZoomY() {
+	public int getZoomY() {
 		return zoomY;
 	}
 	
-	public   int increaseTransX(){
+	public int increaseTransX(){
 		return transX = transX + 15;
 	}
-	public   int increaseTransY(){
+	public int increaseTransY(){
 		return transY = transY + 15;
 	}
-	public   int decreaseTransX(){
+	public int decreaseTransX(){
 		return transX = transX - 15;
 	}
-	public  int decreaseTransY(){
+	public int decreaseTransY(){
 		return transY = transY - 15;
 	}
-	public   int getTransX(){
+	public int getTransX(){
 		return transX;
 	}
 
-	public   int getTransY(){
+	public int getTransY(){
 		return transY;
 	}
-	public   int getTransZ() {
+	public int getTransZ() {
 		return transZ;
 	}
 	
