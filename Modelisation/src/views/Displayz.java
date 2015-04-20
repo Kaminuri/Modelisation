@@ -32,7 +32,7 @@ public class Displayz extends JPanel {
 	}
 	public void paintComponent(Graphics g){
 		g.setColor(Color.WHITE);
-		g.fillRect(0, 0, Const.screenSize.width,Const.screenSize.height);
+		g.fillRect(0, 0, Const.screenSize.width+50,Const.screenSize.height);
 		g.setColor(Color.BLACK);
 		listeX = new int[Const.points.size()];
 		listeY = new int[Const.points.size()];
@@ -46,7 +46,6 @@ public class Displayz extends JPanel {
 			listeZ[i] = (int)(Const.points.get(i).getZ()*zoomZ + z0 );
 		}
 		g.drawPolygon(listeX, listeY, Const.points.size());
-		g.drawPolygon(listeX, listeZ, Const.points.size());
 		
 	}   
 	
