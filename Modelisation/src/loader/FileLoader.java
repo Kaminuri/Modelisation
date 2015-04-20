@@ -14,7 +14,7 @@ public class FileLoader {
 	private double x, y , z;
 	private Point p1, p2;
 	private Segment s1,s2,s3;
-	private String fileName = "x_wing.gts";
+	private String fileName = "sphere20.gts";
 	public FileLoader(){
 		clearLists();
 		String sta;
