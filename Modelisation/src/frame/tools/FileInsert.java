@@ -125,7 +125,6 @@ public class FileInsert extends JFrame{
 		//this.setResizable(true);
 		this.pack();
 	    this.setLocationRelativeTo(null);
-	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setVisible(true);
 	}
 }
