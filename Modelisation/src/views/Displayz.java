@@ -72,48 +72,48 @@ public class Displayz extends JPanel {
 		}
 	}
 	
-	public   void increaseZoomX(){
+	public void increaseZoomX(){
 		zoomX *= 1.1;
 	}
 
-	public   void decreaseZoomX(){
+	public void decreaseZoomX(){
 		zoomX *= 0.9;
 	}
 
-	public   void increaseZoomY(){
+	public void increaseZoomY(){
 		zoomY *= 1.1;
 	}
 
-	public   void decreaseZoomY(){
+	public void decreaseZoomY(){
 		zoomY *= 0.9;
 	}
-	public   int getZoomX() {	
+	public int getZoomX() {	
 		return zoomX;
 	}
-	public   int getZoomY() {
+	public int getZoomY() {
 		return zoomY;
 	}
 	
-	public   int increaseTransX(){
+	public int increaseTransX(){
 		return transX = transX + 15;
 	}
-	public   int increaseTransY(){
+	public int increaseTransY(){
 		return transY = transY + 15;
 	}
-	public   int decreaseTransX(){
+	public int decreaseTransX(){
 		return transX = transX - 15;
 	}
-	public  int decreaseTransY(){
+	public int decreaseTransY(){
 		return transY = transY - 15;
 	}
-	public   int getTransX(){
+	public int getTransX(){
 		return transX;
 	}
 
-	public   int getTransY(){
+	public int getTransY(){
 		return transY;
 	}
-	public   int getTransZ() {
+	public int getTransZ() {
 		return transZ;
 	}
 	
