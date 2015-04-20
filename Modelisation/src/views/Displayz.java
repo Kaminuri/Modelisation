@@ -43,10 +43,9 @@ public class Displayz extends JPanel {
 		for(int i = 0; i < Const.points.size(); i++){
 			listeX[i] = (int)(Const.points.get(i).getX()*zoomX + x0 + transX);
 			listeY[i] = (int)(Const.points.get(i).getY()*zoomY + y0 + transY);
-			listeZ[i] = (int)(Const.points.get(i).getZ()*zoomZ + z0 );
+			//listeZ[i] = (int)(Const.points.get(i).getZ()*zoom + z0 );
 		}
 		g.drawPolygon(listeX, listeY, Const.points.size());
-		
 	}   
 	
 	
@@ -59,7 +58,6 @@ public class Displayz extends JPanel {
 	
 	public void rotationY(double angle){
 		for(int i = 0;i<listeX.length;i++){
-			
 			Const.points.get(i).setX(Const.points.get(i).getX()*Math.cos(angle)+Const.points.get(i).getZ()*Math.sin(angle));
 			Const.points.get(i).setZ(Const.points.get(i).getX()*-Math.cos(angle)+Const.points.get(i).getZ()*Math.cos(angle));
 		}
@@ -72,18 +70,17 @@ public class Displayz extends JPanel {
 		}
 	}
 	
+	
+	
 	public void increaseZoomX(){
 		zoomX *= 1.1;
 	}
-
 	public void decreaseZoomX(){
 		zoomX *= 0.9;
 	}
-
 	public void increaseZoomY(){
 		zoomY *= 1.1;
 	}
-
 	public void decreaseZoomY(){
 		zoomY *= 0.9;
 	}
@@ -93,7 +90,6 @@ public class Displayz extends JPanel {
 	public int getZoomY() {
 		return zoomY;
 	}
-	
 	public int increaseTransX(){
 		return transX = transX + 15;
 	}
@@ -109,14 +105,7 @@ public class Displayz extends JPanel {
 	public int getTransX(){
 		return transX;
 	}
-
 	public int getTransY(){
 		return transY;
-	}
-	public int getTransZ() {
-		return transZ;
-	}
-	
-	
-	
+	}	
 }
